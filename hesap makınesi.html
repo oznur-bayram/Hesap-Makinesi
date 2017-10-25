@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<title>Hesap Makinesi</title>
+	<style type="text/css">
+	    body{
+	    	background: purple;
+	    }
+		.button{
+			background:#97ffff;
+			width:45px;
+			height: 30px;
+			margin-left: 15px;
+		}
+		.display input{
+			position: relative;
+			left: 2px;
+			top: 2px;
+			height: 35px;
+			color: black;
+			text-align: right;
+			font-size: 21px;
+
+		
+
+		}
+	</style>
+	<script type="text/javascript">
+		function c(val)
+		{
+			document.getElementById("display").value=val;
+		}
+		function math(val)
+		{
+			document.getElementById("display").value+=val;
+		}
+		function e(val)
+		{
+			try
+			{
+              c(eval(document.getElementById("display").value))
+			}
+			catch(e)
+			{
+				c('Hatalı')
+			}
+		}
+	</script>
+</head>
+<body>
+<div align="center">
+<div class="display">
+<input type="text" size="17" id="display" style="margin-left:15px "   readonly>
+<div class="keys">
+
+<p>
+    <input type="button" class="button" value="C" onclick='c("")'>
+	<input type="button" class="button" value="(" onclick='math("(")'>
+	<input type="button" class="button" value=")" onclick='math(")")'>
+	<input type="button" class="button" value="/" onclick='math("/")'>
+	
+</p>
+<p>
+	<input type="button" class="button" value="7" onclick='math("7")'>
+	<input type="button" class="button" value="8" onclick='math("8")'>
+	<input type="button" class="button" value="9" onclick='math("9")'>
+	<input type="button" class="button" value="*" onclick='math("*")'>
+</p>
+<p>
+	<input type="button" class="button" value="4" onclick='math("4")'>
+	<input type="button" class="button" value="5" onclick='math("5")'>
+	<input type="button" class="button" value="6" onclick='math("6")'>
+	<input type="button" class="button" value="-" onclick='math("-")'>
+</p>
+<p>
+	<input type="button" class="button" value="1" onclick='math("1")'>
+	<input type="button" class="button" value="2" onclick='math("2")'>
+	<input type="button" class="button" value="3" onclick='math("3")'>
+	<input type="button" class="button" value="+" onclick='math("+")'>
+</p>
+<p>
+    <input type="button" class="button" value="%" onclick='math("%")'>
+	<input type="button" class="button" value="0" onclick='math("0")'>
+	<input type="button" class="button" value="." onclick='math(".")'>
+	<input type="button" class="button" value="=" onclick='e()'>
+</p>
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
